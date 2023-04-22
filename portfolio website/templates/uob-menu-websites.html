@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="{{ url_for('static', filename='uob-menu-websites.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <meta charset="utf-8" />
+
+    <title></title>
+
+</head>
+<body>
+
+	<div class="sitewrapper">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration1">
+
+		<img src="{{ url_for('static', filename='v7.png')}}" class="decoration2">
+
+		<img src="{{ url_for('static', filename='v3.png')}}" class="decoration3">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration4">
+
+		<section class="navifation_container">
+			<nav>
+				<h2 class="nav_name"></h2>
+				<a href="/Projects">Projects</a>
+				<a href="/">Home</a>
+			</nav>
+		</section>
+
+		<section class="headerSection">
+			<h1 class="pageHeader">University of Beer Menu Websites</h1>
+		</section>
+
+
+		<section class="DesignUpdates section">
+
+		
+			<h2 class="sectionHeader FirstSection">Menu Design</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/landingmenu.png')}}" class="designImage Image"></img>
+			
+			<div class="DesignWordingContainer wordingContainer">
+				<p class="DesignUpdatesDescriptionOne wording">As a designer for our website, I was able to make significant improvements to its visual appeal and usability. One of the main challenges was fixing the misaligned elements and uneven spacing that made the site look cluttered and unprofessional. Through careful tweaking of the CSS and layout, I was able to create a cleaner website that is both aesthetically pleasing and easy to navigate.</p>
+				<p class="DesignUpdatesDescriptionTwo wording">In addition to the layout improvements, I also played a key role in developing a brand identity guide for our website. This involved selecting fonts and colors that best represent our brand and convey a sense of professionalism and reliability. Previously, our fonts were condensed and hard to read, which detracted from the user experience. But now, with the use of clean and appealing fonts, our brand is better positioned to stand out and make a lasting impression on our visitors.</p>
+			</div>
+	
+		</section>
+	
+		<section class="GuidingCustomerExperiense section">
+		
+			<h2 class="sectionHeader">Guiding Customer Experience</h2>
+
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/foodmenu.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p class=>Furthermore, I have not only improved the design of our website, but also the customer experience. By incorporating dynamic elements into the site, such as highlighting specific dishes as they come into the user's viewport and drawing attention to rare beers through a unique design, I have made it easier for visitors to navigate and discover our offerings.</p>
+			
+				<div class="codeBox">
+					<pre>
+						<code class="language-javascript">
+	let fadeEffectOptions = {
+	  "duration":   450, //How long it takes to fade
+	  "delay":      100 //How long to wait to start the effect
+
+	//When Loaded Nachos comes in veiw of the screen it loads the Best seller container
+	$w("#LoadedNachos").onViewportEnter( () => {
+		$w("#BSLoadedNachos").show("fade", fadeEffectOptions);
+	});
+	//When Loaded Nachos goes out of veiw of the screen it unloads the Best seller container
+	$w("#LoadedNachos").onViewportLeave( () => {
+		$w("#BSLoadedNachos").hide("fade", fadeEffectOptions);
+	});				
+						</code>
+					</pre>
+				</div>
+			
+				<p>This not only enhances the overall user experience but can also lead to increased engagement and sales. By focusing on both the visual and functional aspects of the website, I am confident that our online presence will continue to thrive and attract new customers.</p>
+			
+			
+			</div>
+
+		</section>
+
+		<section class="ImpovingLoadingSpeeds section">
+		
+			<h2 class="sectionHeader">Improved Load Speeds</h2>
+
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/craftbeermenu.png')}}" class="loadingImage Image"></img>
+
+			<div class="LoadingWordingContainer wordingContainer">
+			<p>It's worth noting that our beer menu is constantly changing, which means that our online menu needs to be updated frequently to reflect the latest offerings. The previous approach was to create a separate webpage for each style of beer, and then use a plugin to pull data from Google Sheets. However, this approach had some significant drawbacks, particularly on mobile devices where it could take anywhere from 5-15 seconds for the data to load. To address this, I developed a custom script using the Google Sheets API that updates a centralized database of all on-tap beers every 10 minutes.</p>
+			<div class="codeBoxExperience">
+				<pre>
+				<code class="language-javascript">
+import {getSecret} from 'wix-secrets-backend';
+import { getValues, appendValues } from '@velo/google-sheets-integration-backend';
+import wixData from 'wix-data';
+
+//This is what pulls data drom the google sheet
+export async function getSecretSheetId() {
+    const id = await getSecret("VacavilleSheet");
+    const result = await getValues(id, "'Website API Pull'!A2:J");
+    const response = result.data.values;
+    
+    return response;
+}
+
+
+export function beerPull(){
+
+    //This pulls the DBL google sheets data from the API
+    let data = getSecretSheetId()
+    data.then((dblData) => {
+
+      //This checks to make sure that the DBL pull didnt come back empty or with a error
+      if(dblData != [] || dblData != null || dblData != undefined){
+
+        //This pulls the data from the wix database
+        wixData.query("VacavilleDBL").find().then((results) => {
+        
+          //This saves the taps that are in google sheets and wix data so we can compare them later in the code
+          let tapNumbersGoogleSheets = [];
+          let tapNumbersWixData = [];
+          for (let row = 1; row < dblData.length; row++) { tapNumbersGoogleSheets.push(dblData[row][0]) }
+          for (let row = 1; row < results.items.length; row++) { tapNumbersWixData.push(results.items[row]._id) }
+
+          //Wix data for loop
+          for (let index = 0; index < results.items.length; index++) {
+            const dataRow = results.items[index];
+            let wixTap = dataRow._id;
+
+            //DBL google sheets for loop 
+            for (let row = 1; row < dblData.length; row++) {
+
+              //---- This formats the data for wix ----
+              let tap = dblData[row][0];
+              let brewery = dblData[row][1];
+              let beer = dblData[row][2] + " - " + brewery;
+              let style = dblData[row][3];
+              let styleTwo = dblData[row][4];
+              let style_description = dblData[row][5];
+              let location = dblData[row][6];
+              let abv = dblData[row][7];
+              let glasswear = dblData[row][8];
+              let price = dblData[row][9];
+              
+              let formatedData = {"_id":tap,"brewery": brewery,"beer": beer,"style": style,"style2": styleTwo,"description": style_description,"location":location,"abv": abv,"glasswear": glasswear,"price": price};
+              //----------------------------------------
+
+              //If the tap is in the wix Data AND in DBL data but it has diffrent beers then it updates the wix data
+              if(wixTap.toString() == tap.toString()){
+                wixData.update("VacavilleDBL",formatedData)
+              }
+
+              //If DBL tap is not in wix data then it adds it in
+              if(tapNumbersWixData.includes(tap) == false && tapNumbersWixData.includes(wixTap) == false || tapNumbersWixData == []){
+                wixData.insert("VacavilleDBL",formatedData)
+              }
+            }
+
+            //If wix tap is not in DBL then it removes it
+            if(tapNumbersGoogleSheets.includes(wixTap) == false && tapNumbersGoogleSheets != []){
+              let options = {"suppressAuth": true,"suppressHooks": true};
+              wixData.remove("VacavilleDBL",wixTap.toString(),options)
+            }
+          }
+        })
+      }  
+    })
+    //catches error for formatting the google sheet data
+    .catch((err) => {
+        const d = new Date();
+        let toInsert = { "date":  (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear(), "time":  d.getHours()+":"+d.getMinutes(), "error":  err, "errorLocation": "The error occurred where the API tried to pull data from the google sheet."}; 
+         wixData.insert("ErrorLog", toInsert) 
+    });
+    console.log("DONE.")
+}			
+					</code>
+				</pre>
+			</div>			
+			<p>As a result, the online beer menu now loads instantly and is always up-to-date with the latest offerings. In addition, I eliminated the need for separate webpages for each style of beer by implementing a filtering system that allows users to easily search and browse the entire database using intuitive buttons. This has not only streamlined the beer menu management process but also enhanced the user experience by making it faster and more convenient to find the perfect beer.</p>
+
+		</section>
+
+		
+
+		
+	</div>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+</html>
