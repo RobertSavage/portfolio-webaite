@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styling/Discord-Bot.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <meta charset="utf-8" />
+
+    <title></title>
+
+</head>
+<body>
+
+	<div class="sitewrapper">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration1">
+
+		<img src="{{ url_for('static', filename='v7.png')}}" class="decoration2">
+
+		<img src="{{ url_for('static', filename='v3.png')}}" class="decoration3">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration4">
+
+		<section class="navifation_container">
+			<nav>
+				<h2 class="nav_name"></h2>
+				<a href="/Projects">Projects</a>
+				<a href="/">Home</a>
+			</nav>
+		</section>
+
+		<section class="headerSection">
+			<h1 class="pageHeader">RPG Game Discord Bot</h1>
+		</section>
+
+		<section class="section">
+			<h2 class="sectionHeader FirstSection">Intoduction</h2>
+			
+			<span class="divider"></span>
+
+			<div class="textBlock" style="margin: 0 auto; width: 80%; grid-column: 1/3;">
+				<p>For this project I wanted to create a fun interactive game people could play while talking to their friends.</p>
+				<p>The technologies I used include: Python and MongoDB</p>
+				<p>There are many parts of this project i will be going over including: <br> creatures <br> battling <br> bosses <br> inventory <br> leveling <br> farming <br> crafting</p>
+			</div>
+
+		</section>
+
+
+		<section class="DesignUpdates section">
+
+			<h2 class="sectionHeader FirstSection">Creatures</h2>
+			
+			<span class="divider"></span>
+
+			<div class="imageBox">
+				<img src="{{ url_for('static', filename='menuwebsites/creature1.png')}}" class="imageInBox imageInBox1"></img>
+				<img src="{{ url_for('static', filename='menuwebsites/creature2.png')}}" class="imageInBox imageInBox2"></img>
+				<img src="{{ url_for('static', filename='menuwebsites/creature3.png')}}" class="imageInBox imageInBox3"></img>
+
+			</div>
+			
+			<div class="DesignWordingContainer wordingContainer">
+				<p>The bot has several commands related to managing creatures in a game or RPG context. Here's a brief overview of the code:</p>
+
+				<ul>
+				  <li><strong>libraries</strong>, such as discord, sqlite3, random, json, math, pymongo, and others.</li>
+				  <li>It defines a class called <code>animals</code>, which is a subclass of <code>commands.Cog</code>.</li>
+				  <li>The <code>__init__</code> method sets up a connection to a MongoDB database using the pymongo library and initializes various collections within the database.</li>
+				  <li>The class contains several command methods (<code>heard</code>, <code>favorites</code>, <code>sellcreature</code>, <code>creature</code>, <code>nickname</code>, and <code>wilderness</code>), each decorated with the <code>@commands.command()</code> decorator, indicating that they are commands accessible through the Discord bot.</li>
+				  <li>The <strong><code>heard</code></strong>command retrieves information about creatures owned by a user and sends an embedded message with the creature data.</li>
+				  <li>The <strong><code>favorites</code></strong> command retrieves information about favorite creatures owned by a user and sends an embedded message with the creature data.</li>
+				  <li>The <strong><code>sellcreature</code></strong> command allows a user to sell a creature they own, updating the user's profile and giving them in-game currency and items in return.</li>
+				  <li>The <strong><code>creature</code></strong> command displays detailed information about a specific creature owned by a user.</li>
+				  <li>The <strong><code>nickname</code></strong> command allows a user to change the nickname of a specific creature they own.</li>
+				  <li>The <strong><code>wilderness</code></strong> command simulates encountering a random creature in the wilderness, generating creature data and sending an embedded message with the creature's information.</li>
+				</ul>
+				
+				<p>Please note that without the complete context and the definitions of other classes or functions referenced in this code, it is difficult to provide a comprehensive understanding of its functionality.</p>
+				
+			</div>
+	
+		</section>
+	
+
+
+		<section class="GuidingCustomerExperiense section">
+		
+			<h2 class="sectionHeader">Battling</h2>
+
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/arenaSystem.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p class="">I've developed a captivating feature that enables player-versus-player battles. Players have the ability to challenge each other by sending battle requests, initiating thrilling encounters. During these battles, participants can strategically choose from three distinct types of attacks, adding an element of decision-making and variety to the gameplay. This engaging feature enhances interactivity and competition among players, fostering an immersive and dynamic environment within the Discord community.</p>
+				<p></p>
+			</div>
+
+		</section>
+
+
+
+		<section class="DesignUpdates section">
+
+			<h2 class="sectionHeader FirstSection">Bosses</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/bossBattleSystem.png')}}" class="designImage Image"></img>
+			
+			<div class="DesignWordingContainer wordingContainer">
+				<p>Players can team up with their companions to engage in thrilling boss battles, earning valuable loot as a reward. This feature enhances gameplay by encouraging strategic coordination and unleashing powerful abilities. By offering a immersive and rewarding experience, it adds excitement, depth, camaraderie, and competition to the Discord community.</p>
+			</div>
+	
+		</section>
+
+
+
+		<section class="GuidingCustomerExperiense section">
+		
+			<h2 class="sectionHeader">Inventory</h2>
+
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/inventorySystem.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p class="">I have integrated a robust player inventory system utilizing MongoDB. This system enables players to store and manage their collected items, including gear and crafting materials for armor and weapons. By leveraging the power of MongoDB, players can easily access and organize their inventory, ensuring their valuable items are secure and readily available. This feature enhances the gameplay experience by providing a seamless and intuitive interface for players to manage their equipment and crafting resources, fostering a sense of progression and customization within the game.</p>
+			</div>
+
+		</section>		
+
+
+		<section class="DesignUpdates section">
+
+			<h2 class="sectionHeader FirstSection">Leveling</h2>
+			
+			<span class="divider"></span>
+						
+			<div class="DesignWordingContainer wordingContainer levelingContainer">
+				<p>I've integrated an exciting leveling system in my Discord bot using MongoDB. It allows players to earn experience points and level up through battles, fishing, quests, and boss fights. With secure progress tracking and storage in MongoDB, players can enjoy a seamless leveling experience. This feature enhances gameplay by fostering a sense of achievement and progression, motivating players to explore different activities. Engaging in battles, fishing for rare catches, or completing challenging quests all contribute to a dynamic and rewarding experience for players in the Discord community.</p>
+			</div>
+	
+		</section>
+	
+		
+		<section class="GuidingCustomerExperiense section">
+		
+			<h2 class="sectionHeader">Farming</h2>
+
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/farmingSystem.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p class="">I've implemented an engaging farming system where users can immerse themselves in the joys of agriculture. By finding or purchasing seeds, players have the opportunity to cultivate their own farms. Each seed possesses a unique growth time, adding an element of anticipation and planning to the experience. Once fully grown, players can harvest valuable materials, which can be utilized for potion crafting or sold for in-game currency. This interactive feature not only allows users to embrace the rewarding nature of farming but also offers avenues for resource management and economic gameplay within the Discord community.</p>
+			</div>
+
+		</section>				
+
+		<section class="DesignUpdates section">
+
+			<h2 class="sectionHeader FirstSection">Crafting</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/craftingSystem.png')}}" class="designImage Image"></img>
+			
+			<div class="DesignWordingContainer wordingContainer">
+				<p>I've implemented an immersive crafting system that empowers players to create essential items for their progression within the game. This feature allows users to craft armor, weapons, potions, and various other items to enhance their gameplay experience. By gathering the necessary resources and following crafting recipes, players can unleash their creativity and tailor their equipment and consumables to their unique playstyle. The crafting system fosters a sense of accomplishment and self-sufficiency, as players become masters of their own progression. With a wide range of possibilities, this feature adds depth, customization, and a rewarding sense of achievement to the Discord community.</p>
+			</div>
+	
+		</section>
+
+	</div>
+
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styling/style.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Savage Digital</title>
@@ -53,10 +53,14 @@
 			
 			<p>Developer. Data Analist. IT & Operations Specalist.</p>
 
-			<button class="view_work_button">Resume</button>
+			<a class="view_work_button" href="static/Robert Savgae Resume.pdf" download>Resume</a>
 			<div class="socials">
-				<img class="github" src="{{url_for('static', filename='github.png')}}">
-				<img class="linkedin" src="{{url_for('static', filename='linkedin.png')}}">
+				<a href="https://github.com/RobertSavage">
+					<img class="github" src="{{url_for('static', filename='github.png')}}">
+				</a>
+				<a href="https://www.linkedin.com/in/robertesavage">
+					<img class="linkedin" src="{{url_for('static', filename='linkedin.png')}}">
+				</a>
 			</div>
 
 			<div class="x_svg">

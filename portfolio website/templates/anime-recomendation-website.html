@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styling/anime-website.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <meta charset="utf-8" />
+
+    <title></title>
+
+</head>
+<body>
+
+	<div class="sitewrapper">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration1">
+
+		<img src="{{ url_for('static', filename='v7.png')}}" class="decoration2">
+
+		<img src="{{ url_for('static', filename='v3.png')}}" class="decoration3">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration4">
+
+		<section class="navifation_container">
+			<nav>
+				<h2 class="nav_name"></h2>
+				<a href="/Projects">Projects</a>
+				<a href="/">Home</a>
+			</nav>
+		</section>
+
+		<section class="headerSection">
+			<h1 class="pageHeader">Anime Recomendation Website</h1>
+		</section>
+
+
+		<section class="loginSystemSection section">
+
+			<h2 class="sectionHeader FirstSection">Data Gathering</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/mal.png')}}" class="designImage Image loginImage"></img>
+			
+			<div class="loginSystemContainer wordingContainer">
+				<p class="loginSystemOne wording">or my project, I gathered data using Python's request library, Beautiful Soup (bs4), and Selenium. Specifically, I scraped a website called MyAnimeList to collect over 17K entries for my own website. The process involved sending HTTP requests to the website's server, parsing the HTML response with bs4, and using Selenium to automate interactions with the website, such as scrolling and clicking. By combining these tools and techniques, I was able to efficiently extract and process a large amount of data, which was a crucial step in building my website</p>
+			</div>
+
+	
+		</section>
+
+		
+
+		<section class="GuidingCustomerExperiense section notTopSection">
+		
+			<h2 class="sectionHeader">Website Design</h2>
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/OtakuRec.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p>For my anime recommendation website project, I chose a Netflix-inspired design to create a clean, modern, and intuitive user interface that would be familiar and easy to use for most people. Using a combination of HTML, CSS, and JavaScript, I created a wireframe of the website layout, styled the different elements, and implemented dynamic features such as a sliding banner and search bar. Overall, the design gives the website a professional and polished look, while also showcasing anime content in a compelling way.</p>
+			</div>
+
+		</section>
+
+
+		<section class="loginSystemSection section notTopSection">
+
+			<h2 class="sectionHeader FirstSection">Machine Learning Feature</h2>
+			
+			<span class="divider"></span>
+						
+			<div class="loginSystemContainer wordingContainer machineLearning">
+				<p class="loginSystemOne wording">For my project, I created an anime recommendation website that utilizes machine learning to provide personalized results for the user. The first step in this process involved cleaning all the data by removing stop words, punctuation, and other unnecessary elements.</p>
+				<div class="codeBox loginCodeBox bottomBox">
+					<pre>
+						<code class="language-python">
+#fuction to remove stop words
+def filter_words(sent):
+	stopword_list = stopwords.stopwords
+	puncuation_removed = re.sub(r'[^\w\s]','',sent)
+	splint_sentence = puncuation_removed.split(' ')
+	new_sentence = []
+	for word in splint_sentence:
+		if word not in stopword_list:
+			new_sentence.append(word)
+	return ' '.join(new_sentence)
+						</code>
+					</pre>
+				</div>
+				<p>Next, I combined the show title and description and tokenized it. When the user enters their search, I repeat the same data cleaning and tokenizing process.</p>
+				<div class="codeBox loginCodeBox bottomBox">
+					<pre>
+						<code class="language-python">
+#vectorize and tokenize
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(cleaned_description_list)
+						</code>
+					</pre>
+				</div>				
+				<p>To determine the best matching fit, I utilized cosine similarity which helped to counter the size difference in text comparison. Overall, this approach resulted in a more accurate and efficient recommendation system for anime enthusiasts.</p>
+				<div class="codeBox loginCodeBox bottomBox">
+					<pre>
+						<code class="language-python">
+#Get similarity
+similarities = [cosine_similarity(Y[0],X[i])[0][0] for i in range(len(cleaned_description_list))]
+thresh = max(similarities) * 0.25
+						</code>
+					</pre>
+				</div>		
+			</div>
+			
+		</section>
+
+
+
+
+
+	</div>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+</html>

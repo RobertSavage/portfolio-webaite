@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styling/uob-employee-portal.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <meta charset="utf-8" />
+
+    <title></title>
+
+</head>
+<body>
+
+	<div class="sitewrapper">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration1">
+
+		<img src="{{ url_for('static', filename='v7.png')}}" class="decoration2">
+
+		<img src="{{ url_for('static', filename='v3.png')}}" class="decoration3">
+
+		<img src="{{ url_for('static', filename='v4.png')}}" class="decoration4">
+
+		<section class="navifation_container">
+			<nav>
+				<h2 class="nav_name"></h2>
+				<a href="/Projects">Projects</a>
+				<a href="/">Home</a>
+			</nav>
+		</section>
+
+		<section class="headerSection">
+			<h1 class="pageHeader">University of Beer Employee Portal</h1>
+		</section>
+
+
+		<section class="loginSystemSection section">
+
+			<h2 class="sectionHeader FirstSection">Login System</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/uobportallogin.png')}}" class="designImage Image loginImage"></img>
+			
+			<div class="loginSystemContainer wordingContainer">
+				<p class="loginSystemOne wording">As part of my portfolio project, I developed a login system for the website using the 7shifts API, which is our HR scheduling software. This system allowed us to automatically create employee accounts as they were hired on and deactivate any employees who were no longer with the company. This streamlined the onboarding and offboarding process, and ensured that employee data was always up-to-date.</p>
+			</div>
+			<div class="codeBox loginCodeBox">
+				<pre>
+					<code class="language-javascript">
+	import wixData from 'wix-data';
+	import _ from 'js-sha256';
+	
+	
+	export function loginUser(email, password) {
+	  var sha256 = require('js-sha256');
+		var token = wixData.query("RegisteredUsers")
+			.eq("email",email)
+			.eq("password",sha256(password))
+			.find()
+			.then((results) => {
+	
+			  if(results.items.length > 0){
+				//check to see if there is a login hash.
+				if (results.items[0].hash != null && results.items[0].hash != "") {
+					return results.items[0].hash;
+				}else{
+					//users array to update
+					var toUpdate = results.items[0];
+					
+					//The "salt" is added onto the has to randomize it
+					var salt = Math.floor(Math.random() * 129700156);
+					
+					//This updates the users hash and salt
+					var hash = sha256(email + salt);
+					toUpdate.hash = hash;
+					toUpdate.salt = salt;
+					toUpdate.tokenCreated = new Date();
+					wixData.update("RegisteredUsers", toUpdate)
+					  .then((results) => {}).catch((err) => {});
+					return hash;
+				}
+	
+			  } else {
+				//Return invalid
+				return false;
+			  }
+			})
+			.catch((err) => {
+			  console.log(err);
+			});
+		return token
+	}			
+					</code>
+				</pre>
+			</div>
+	
+		</section>
+
+		
+
+		<section class="GuidingCustomerExperiense section notTopSection">
+		
+			<h2 class="sectionHeader">Learning Academy</h2>
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/uobportallearningacademy.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p>One of my notable achievements was implementing a progress tracking system for a learning academy. This system allowed students to easily track their progress throughout the course, including completed assignments and grades. One unique feature of the system was its ability to generate personalized study plans based on each student's performance and learning goals. Additionally, the system included a messaging feature that allowed students to communicate with instructors and receive feedback on their work in real-time.</p>
+			</div>
+			<a href="https://github.com/RobertSavage/uob-employee-portal-revemp/blob/main/learningAcademy.js" class="ViewCodeButton">View Code</a>	
+
+		</section>
+
+
+		<section class="loginSystemSection section notTopSection">
+
+			<h2 class="sectionHeader FirstSection">Lead in Training</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/uobportalleadprogram.png')}}" class="designImage Image"></img>
+			
+			<div class="loginSystemContainer wordingContainer">
+				<p class="loginSystemOne wording">As part of my portfolio project, I developed a login system for the website using the 7shifts API, which is our HR scheduling software. This system allowed us to automatically create employee accounts as they were hired on and deactivate any employees who were no longer with the company. This streamlined the onboarding and offboarding process, and ensured that employee data was always up-to-date.</p>
+			</div>
+	
+		</section>
+
+		<section class="GuidingCustomerExperiense section notTopSection">
+		
+			<h2 class="sectionHeader">Test Progress Tracker</h2>
+			<span class="divider"></span>
+
+			<img src="{{ url_for('static', filename='menuwebsites/uobportaltest.png')}}" class="ExperienceImage Image"></img>
+
+			<div class="ExperienceWordingContainer wordingContainer">
+				<p>Another project I worked on was creating a page for employees and managers to track testing progress in our stores. Our employees are required to periodically take tests to stay up-to-date on our food, drinks, policies, and other important information. To streamline this process, I used the Google API to take Google Forms submissions and track employee testing progress. Employees can see the due date for their test, and managers can view the progress of every employee at their location.</p>
+			</div>
+			<a href="https://github.com/RobertSavage/uob-employee-portal-revemp/blob/main/testTrackerFrontEnd.js" class="ViewCodeButton">View Code</a>	
+		</section>		
+
+
+		<section class="loginSystemSection section notTopSection">
+
+			<h2 class="sectionHeader FirstSection">Service log</h2>
+			
+			<span class="divider"></span>
+			
+			<img src="{{ url_for('static', filename='menuwebsites/uobportalservicelog.png')}}" class="designImage Image"></img>
+			
+			<div class="loginSystemContainer wordingContainer">
+				<p class="loginSystemOne wording">I created a service log for the operations department to streamline processes and improve communication. This tool allows team members to submit problems they have come across or look up problems to see if other members have previously solved them.</p>
+			</div>
+	
+		</section>
+
+		
+		<section class="loginSystemSection section notTopSection">
+
+			<h2 class="sectionHeader FirstSection">Role Based Views</h2>
+			
+			<span class="divider"></span>
+						
+			<div class="loginSystemContainer wordingContainer roleBaseViews">
+				<p class="loginSystemOne wording">I implemented role-based views to cater to the different needs of employees, managers, and admins. By doing so, each role sees only the relevant information and features they need, which enhances their experience and increases efficiency. Implementing role-based views not only improves user experience but also ensures the security and privacy of sensitive information. Overall, I believe this feature makes the website more user-friendly and customized for different user roles.</p>
+				<p class="loginSystemOne wording">I used the 7shifts API on my website to automate the process of creating accounts for employees, saving time and ensuring accuracy. This feature creates accounts for new employees as soon as they are hired, eliminating manual data entry and reducing errors. It also allows employees to access the website and work-related information immediately, increasing productivity and engagement. The 7shifts API makes the website more efficient and user-friendly for both employees and managers.</p>
+			</div>
+			<a href="https://github.com/RobertSavage/uob-employee-portal-revemp/blob/main/7shiftsAPIGetEmployeeInfo.js" class="ViewCodeButton ViewCodeRoleViews">View Code</a>	
+	
+		</section>
+
+
+	</div>
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+</html>

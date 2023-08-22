@@ -2,163 +2,135 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-	<link rel="stylesheet"  href="{{ url_for('static', filename='Projects_style.css')}}">
+	<link rel="stylesheet"  href="{{ url_for('static', filename='styling/Projects_style.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 </head>
 <body>
-	<div class="navifation_container">
-		<nav>
-			<h2 class="nav_name">Robert Savage</h2>
-			<a href="/Projects">Projects</a>
-			<a href="/">Home</a>
-			
-		</nav>
-	</div>
-
-	<header class="header">
-	  <a href="" class="logo">Robert Savage</a>
-	  <input class="menu-btn" type="checkbox" id="menu-btn" />
-	  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-	  <ul class="menu">
-	    <li><a href="/">Home</a></li>
-	    <li><a href="/Projects">Portfolio</a></li>
-	  </ul>
-	</header>
-
-	<img src="{{ url_for('static', filename='v7.png')}}" class="X_decoration">
-	<div class="dots_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e1_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e2_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e3_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e4_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e5_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e6_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e7_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e8_decoration">
-		<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e9_decoration">
-	</div>
-
 	
-	<div class="web_automation">
-		<h1 class="header2">Web Automation</h1>
-		<span class="divider"></span>
-		<img src="{{ url_for('static', filename='v8.png')}}" class="circle1_decoration">
-		<img src="{{ url_for('static', filename='v8.png')}}" class="circle2_decoration">
-		<div class="Instagram_account_watcher card">
-			<h1 href="">Instagram Account Watcher</h1>
-			<p>IN PROGRESS</p>
-			<button>Preview</button>
-			<a class="button" href="" style="text-decoration:none">code</a>
+	<div class="sitewrapper">
+
+		<section class="navifation_container">
+			<nav>
+				<h2 class="nav_name"></h2>
+				<a href="/Projects">Projects</a>
+				<a href="/">Home</a>
+			</nav>
+		</section>
+
+		<img src="{{ url_for('static', filename='v7.png')}}" class="X_decoration">
+		<div class="circles_svg">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e1_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e2_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e3_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e4_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e5_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e6_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e7_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e8_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e9_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e10_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e11_decoration">
+			<img src="{{ url_for('static', filename='Ellipse 31.png')}}" class="e12_decoration">
 		</div>
-		<div class="Instagram_Engadgment card">
-			<h1 href="">Instagram Engagement</h1>
-			<p>The instagram engagement bot does just as it says. It logs into your account and allows you to engage with whatever communities you would like. It likes and comments on post for you while simulating it as if a person was doing it.</p>
-			<button class="Instagram_Engadgment_button" >Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Instagram-Engadgment-Bot" style="text-decoration:none">code</a>
-		</div>
-		<div class="Instagram_Account_Finder card">
-			<h1 href="">Instagram Account Finder</h1>
-			<p>This scraper allows you to find users in a niche that you want within a certain follower range.</p>
-			<button class="instagram_account_finder_button">Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Instagram-Account-Finder" style="text-decoration:none">code</a>
-		</div>
-		<div class="Reddit_user_sraper card">
-			<h1 href="">Reddit User Pull</h1>
-			<p>This program simply allows you to pull usernames from any subreddits that you want, with ease and full control.</p>
-			<button class="Reddit_user_scraper_button">Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Reddit-User-Scraper" style="text-decoration:none">code</a>
-		</div>
-		<div class="Reddit_Person_Data card">
-			<h1 href="">Reddit Marketing Data</h1>
-			<p>Reddit marketing tool that allows you to import a list of subreddits, the program then goes to each users page who has interacted with that subreddit and makes a list of that users top most used words(excluding unnecessary words such as: if, and, but, etc..) to find key words in that niche.</p>
-			<button class="Reddit_Person_Data_button">Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Reddit-Marketing-Data" style="text-decoration:none">code</a>
-		</div>
-		<div class="Reddit_Comment_Scrape card">
-			<h1 href="">Reddit Comment Scraper</h1>
-			<p>No preview Yet</p>
-			<button>Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Reddit-Comment-User-Scraper" style="text-decoration:none">code</a>
-		</div>
-		<div class="Tripadvisor_Srape card">
-			<h1 href="">Tripadvisor Data Collector</h1>
-			<p>The trip advisor restaurant program allows the user to take restaurant data from an imported city list, and return data for every restaurant in that city.</p>
-			<button class="trip_advisor_scraper_button">Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Tripadvisor-Restaurant-Scraper" style="text-decoration:none">code</a>
-		</div>
-		<div class="Yellowpages_Srape card">
-			<h1 href="">Yellowpages Data Collector</h1>
-			<p>The Yellowpages program allows the user to take job data from an imported city list, and return data for every job in that city.</p>
-			<button>Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Yellow-pages-Scraper" style="text-decoration:none">code</a>
-		</div>
-		<div class="Discord_Bot card">
-			<h1 href="">Discord Bot Mystical Animals</h1>
-			<p>Mystical animals is an ambitious project I worked on for fun and is not yet completed but still offers fun functions. It allows monsters with different rarities to spawn and users to catch them. Users can view their animals and their skills and even name them.</p>
-			<button>Preview</button>
-			<a class="button" href="https://github.com/dachil1pil1/Discord-Game-Mystic-Animals" style="text-decoration:none">code</a>
-		</div>
+	
+
+		<section class="websites projectSections">
+			<h1 class="sectionHeader">Websites</h1>
+
+			<div class="card shipwrecked">
+				<h1 class="cardHeader">Shipwrecked Tiki Bar</h1>
+				<p>I created a captivating Tiki bar website, handling the layout and design from start to finish. Inspired by the lively Tiki culture, I crafted an engaging user experience with vibrant colors, playful fonts, and authentic imagery. The site is fully responsive across all devices, showcasing my blend of creativity and technical skills. Enjoy the enchanting realm of my Tiki bar website!</p>
+				<img src="{{ url_for('static', filename='shipwrecked.png')}}">
+				<div class="buttonBox">	
+					<a href="https://www.shipwreckedtikibar.com">View Website</a>
+				</div>
+			</div>
+
+			<div class="card uobEmployeePortal">
+				<h1 class="cardHeader">UoB Employee Portal</h1>
+				<p>With a new, more secure login system, our employees can access the site with ease and confidence. Additionally, the tedious tasks we once did in the office are now automated, with scheduled scripts and APIs that provide easy-to-read reports right on the website.</p>
+				<img src="{{ url_for('static', filename='menuwebsites/employeePortal.png')}}">
+				<div class="buttonBox">	
+					
+					<a class="" href="/uob-employee-portal">Contributions</a>
+				</div>
+
+			</div>
+
+			<div class="card uobMenuWebsites">
+				<h1 class="cardHeader">UoB Menu Website</h1>
+				<p>After my work, the site is now more accessible for our older audience, with easier navigation and a simpler layout. Additionally, we've improved the load time of our menu, making for a faster and more user-friendly experience.</p>
+				<img src="{{ url_for('static', filename='menuwebsites/landingmenu.png')}}">
+				<div class="buttonBox">	
+					<a href="https://www.uobfolsommenu.com">View Website</a>
+					<a class="buttonTwo" href="/uob-menu-websites">Contributions</a>
+				</div>
+
+			</div>
+
+			<div class="card uobWebsiteCard">
+				<h1 class="cardHeader">UoB Website</h1>
+				<p>I am proud to have made significant improvements to our site's SEO, ensuring it's easily found by search engines. Additionally, I created new pages to provide our visitors with even more valuable information about our business.</p>
+				<img src="{{ url_for('static', filename='menuwebsites/mainWebsite.png')}}">
+				<div class="buttonBox">	
+					<a href="https://www.theuob.com">View Website</a>
+					<a class="buttonTwo" href="/uob-website">Contributions</a>
+				</div>
+
+			</div>
+
+			<div class="card animeWebsite">
+				<h1 class="cardHeader">Anime Recomendation</h1>
+				<p>Then you'll love our new anime recommendation website, created by our talented developer! With filters and search features that allow you to easily find a show that matches your interests, we've made it easier than ever to discover your next favorite anime. Thanks to our developer's hard work in gathering data from a popular database website, our recommendations are always up-to-date and on point.</p>
+				<img src="{{ url_for('static', filename='anime_website.png')}}">
+				<div class="buttonBox">	
+					<a href="http://www.otakurec.com">View Website</a>
+					<a class="buttonTwo" href="/anime-recomendation-website">Contributions</a>
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<section class="bots projectSections">
+			<h1 class="sectionHeader">Bots & AI</h1>
+			
+			<div class="cardContainer">
+				<div class="cardBot card discordBotCard">
+					<h1 class="cardHeader">Discord Bot</h1>
+					<p>Introducing your Discord bot—a captivating text-based RPG experience. It utilizes MongoDB as the database backend for seamless gameplay. Enter a vibrant world, embark on epic adventures, level up characters, undertake quests, and engage in intense monster battles within treacherous dungeons. With customizable characters and unique abilities, players earn experience points by completing quests and defeating monsters. Leveling up enhances attributes and unlocks new skills. Employ strategic tactics in turn-based combat to conquer challenges within dungeons. </p>
+					<div class="buttonBox">	
+						<a class="buttonTwo" href="/Discord-Bot">View Project</a>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<section class="dataProjcts projectSections">
+
+			<h1 class="sectionHeader">Data</h1>
+			
+			<div class="cardContainerData">
+				<div class="cardBot card researchData">
+					<h1 class="cardHeader">Research Paper</h1>
+					<p>The formation of phosphorous-containing polycyclic aromatic hydrocarbons (PAPHs) in astrophysical contexts is proposed and analyzed by means of computational methods [B3LYP-D3BJ/ma-def2-TZVPP, MP2-F12, CCSD-F12b and CCSD(T)-F12b levels of theory].</p>
+					<div class="buttonBox">	
+						<a href="https://pubs.rsc.org/en/content/articlelanding/2019/cp/c9cp00547a">View Website</a>
+					</div>
+				</div>
+	
+			</div>
+
+
+		</section>
+
+
 	</div>
-
-	<div class="websites">
-		<h1 class="header3">Websites</h1>
-		<span class="divider"></span>
-
-		<div class="Anime_Webiste card">
-		<h1 href="">Anime Recommendation Website</h1>
-			<p>This was a project to practice using databases on a website. I gathered information on tens of thousands of anime's and allows people to find anime with specific genres. all functions are not working yet.</p>
-		<a class="button" href="https://animerecomendationapp.herokuapp.com" style="text-decoration:none">Website</a>
-		</div>
-
-	</div>
-
-
-
-	<div class="data_projects">
-		<h1 class="header5">Data Projects</h1>
-		<span class="divider"></span>
-		<div class="Restaurant_Data_Analizer card">
-			<h1 href="">Restaurant Data Analyzer</h1>
-			<p>This is a data project that allows you to scrape comments from a location on yelp and analyze what people think of that location. including visualizations.</p>
-			<a class="button" href="https://docs.google.com/document/d/1TJJ984AKoj_08X4R3gqKMHha2K4D4L2zESPY5BFYBGI/edit?usp=sharing" style="text-decoration:none">Report</a>
-			<a class="button" href="https://github.com/dachil1pil1/Restaurant-Data-Analizer/tree/main" style="text-decoration:none">code</a>
-		</div>
-
-		<div class="chemistry_paper card">
-			<h1 href="">(PAPHs) in astrophysical environments</h1>
-			<p>This is a paper I helped with in university with one of the professors. Using the super computer I helped run probabilities of the state of each molecule.</p>
-			<a class="button" href="https://pubs.rsc.org/en/content/articlelanding/2019/cp/c9cp00547a" style="text-decoration:none">Paper</a>
-
-		</div>
-	</div>
-
-	<div class="footer"></div>
-
-
-
-	<div class="Instagram_Engadgment_video video">
-		<video src="{{ url_for('static', filename='instagramengadgment.mp4')}}" controls="true"></video>
-		<img src="{{ url_for('static', filename='x-mark-64.png')}}" class="close" >
-	</div>
-	<div class="trip_advisor_scraper_video video">
-		<video src="{{ url_for('static', filename='trip_advisor_scraper.mp4')}}" controls="true"></video>
-		<img src="{{ url_for('static', filename='x-mark-64.png')}}" class="close_trip">
-	</div>
-	<div class="Reddit_Person_Data_video video">
-		<video src="{{ url_for('static', filename='Reddit_nice_data.mp4')}}" controls="true"></video>
-		<img src="{{ url_for('static', filename='x-mark-64.png')}}" class="close_reddit_data">
-	</div>
-	<div class="reddit_user_scraper_video video">
-		<video src="{{ url_for('static', filename='reddit_user_scraper.mp4')}}" controls="true"></video>
-		<img src="{{ url_for('static', filename='x-mark-64.png')}}" class="close_reddit_user">
-	</div>
-	<div class="instagram_account_finder_video video">
-		<video src="{{ url_for('static', filename='instagram_account_finder.mp4')}}" controls="true"></video>
-		<img src="{{ url_for('static', filename='x-mark-64.png')}}" class="close_instagram_account_finder">
-	</div>
-
-	<script src="{{url_for('static', filename='projects_script.js')}}"></script>
 
 </body>
 </html>
